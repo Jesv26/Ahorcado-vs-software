@@ -51,7 +51,7 @@ func start_round() -> void:
 	guess_button.disabled = false
 	Global.reset_letters.emit()
 	lives = 5
-	update_lives(lives)
+	update_lives(0)
 	get_question()
 	Global.round_start.emit()
 
@@ -213,6 +213,7 @@ func _on_guess_button_pressed() -> void:
 
 func _on_button_restart_pressed() -> void:
 	animation_player.play("fade_out")
+	QuestionManager.start_game()
 	await animation_player.animation_finished
 	get_tree().reload_current_scene()
 
