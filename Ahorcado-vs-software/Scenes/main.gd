@@ -51,6 +51,7 @@ func start_round() -> void:
 	guess_button.disabled = false
 	Global.reset_letters.emit()
 	lives = 5
+	update_lives(lives)
 	get_question()
 	Global.round_start.emit()
 
