@@ -264,6 +264,9 @@ expand_margin_bottom = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqvom"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hptm8"]
+bg_color = Color(0.23031491, 0.23031494, 0.23031485, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7u77a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ie0r4"]
@@ -273,9 +276,6 @@ script = ExtResource("1_kry3j")
 character_slot = ExtResource("2_21xkr")
 level_label = NodePath("GameUI/PlayerUI/MarginContainer/Label")
 question_space = NodePath("GameUI/PlayerUI/MarginContainer/QuestionSpace/Label")
-
-[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1520104655]
-scroll_offset = Vector2(45, 118)
 
 [node name="CharacterSprites" type="Sprite2D" parent="." unique_id=1494739662]
 position = Vector2(870, 275)
@@ -512,6 +512,7 @@ layout_mode = 2
 letter = "Z"
 
 [node name="PauseUI" type="Control" parent="GameUI" unique_id=1942564820]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -553,6 +554,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hptm8")
 
 [node name="PauseMenu" type="MarginContainer" parent="GameUI/PauseUI/PanelPause" unique_id=225898072]
 visible = false
