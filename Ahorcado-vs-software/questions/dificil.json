@@ -1,0 +1,57 @@
+[
+    {
+        "id": 23,
+        "pregunta": "Proceso de descubrir, recopilar y comprender las necesidades de los usuarios.",
+        "respuesta": "ELICITACION"
+    },
+    {
+        "id": 24,
+        "pregunta": "Patrones utilizados en el diseño orientado a objetos para asignar responsabilidades a las clases.",
+        "respuesta": "GRASP"
+    },
+    {
+        "id": 25,
+        "pregunta": "Capacidad de seguir el origen y evolución de un requisito a lo largo de todo el ciclo de vida.",
+        "respuesta": "TRAZABILIDAD"
+    },
+    {
+        "id": 26,
+        "pregunta": "Comprobación técnica de que el documento de requisitos cumple con los estándares de calidad.",
+        "respuesta": "VERIFICACION"
+    },
+    {
+        "id": 27,
+        "pregunta": "Técnica de observación donde el analista se sumerge en el entorno diario del usuario para entender su trabajo.",
+        "respuesta": "ETNOGRAFIA"
+    },
+    {
+        "id": 28,
+        "pregunta": "Situación en la que dos o más requisitos se contradicen entre sí y deben negociarse.",
+        "respuesta": "CONFLICTO"
+    },
+    {
+        "id": 29,
+        "pregunta": "Clasificación de los requisitos según su importancia y urgencia para el negocio.",
+        "respuesta": "PRIORIZACION"
+    },
+    {
+        "id": 30,
+        "pregunta": "Modelo que representa las entidades de información del sistema y sus relaciones.",
+        "respuesta": "MODELADO DE DATOS"
+    },
+    {
+        "id": 31,
+        "pregunta": "Representación de cómo reaccionan los objetos o el sistema ante eventos internos o externos.",
+        "respuesta": "COMPORTAMIENTO"
+    },
+    {
+        "id": 32,
+        "pregunta": "Estudio que evalúa si el proyecto es técnica y económicamente viable antes de desarrollarlo.",
+        "respuesta": "FACTIBILIDAD"
+    },
+    {
+        "id": 33,
+        "pregunta": "Documento o acuerdo formal que define el alcance y los requisitos pactados entre el cliente y los desarrolladores.",
+        "respuesta": "LINEA BASE"
+    }
+]

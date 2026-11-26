@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "pregunta": "Técnica directa en la que el analista formula preguntas estructuradas o abiertas a un usuario para descubrir sus necesidades.",
+        "respuesta": "ENTREVISTA"
+    },
+    {
+        "id": 2,
+        "pregunta": "Cualquier persona, grupo u organización que afecta o se ve afectado por el desarrollo y resultado del sistema.",
+        "respuesta": "STAKEHOLDER"
+    },
+    {
+        "id": 3,
+        "pregunta": "Sesión grupal creativa donde los participantes generan ideas rápidamente para identificar posibles funcionalidades del software.",
+        "respuesta": "BRAINSTORMING"
+    },
+    {
+        "id": 4,
+        "pregunta": "Versión preliminar o maqueta visual del sistema utilizada para validar ideas con el usuario antes de programar.",
+        "respuesta": "PROTOTIPO"
+    },
+    {
+        "id": 5,
+        "pregunta": "Descripción corta y simple de una funcionalidad contada desde la perspectiva del usuario final: Como usuario quiero...",
+        "respuesta": "HISTORIA"
+    },
+    {
+        "id": 6,
+        "pregunta": "Instrumento escrito con preguntas cerradas o de opción múltiple útil para recopilar datos de una gran cantidad de usuarios.",
+        "respuesta": "CUESTIONARIO"
+    },
+    {
+        "id": 7,
+        "pregunta": "Técnica pasiva donde el analista acompaña y mira al usuario en su entorno laboral diario sin intervenir en sus tareas.",
+        "respuesta": "OBSERVACION"
+    },
+    {
+        "id": 8,
+        "pregunta": "Reunión colaborativa intensiva, cuyas siglas en inglés identifican una técnica diseñada para acelerar la captura de requisitos entre clientes y desarrolladores.",
+        "respuesta": "JAD"
+    },
+    {
+        "id": 9,
+        "pregunta": "Actividad que consiste en revisar manuales, leyes, formularios y reportes actuales de la empresa para extraer reglas de negocio.",
+        "respuesta": "DOCUMENTACION"
+    },
+    {
+        "id": 10,
+        "pregunta": "Requisito que define las acciones, cálculos o servicios específicos que el sistema debe realizar.",
+        "respuesta": "FUNCIONAL"
+    },
+    {
+        "id": 11,
+        "pregunta": "Cualidad negativa que se debe evitar para que un requisito no tenga múltiples interpretaciones.",
+        "respuesta": "AMBIGUEDAD"
+    }
+]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b74832fe531kq"]
+
+[ext_resource type="Script" uid="uid://byhsyuscc6kgb" path="res://Scenes/character_slot.gd" id="1_a1nqx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0v7p"]
+bg_color = Color(0, 0, 0, 0.24705882)
+
+[node name="CharacterSlot" type="Label" unique_id=1971643728]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0v7p")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_a1nqx")

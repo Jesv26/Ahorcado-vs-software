@@ -1,0 +1,812 @@
+[gd_scene format=3 uid="uid://dcuw71mb6ifp0"]
+
+[ext_resource type="PackedScene" uid="uid://by7i7ub756n0x" path="res://Scenes/character_button.tscn" id="1_8gbba"]
+[ext_resource type="Script" uid="uid://bem2wfb7yaifl" path="res://Scenes/pause_ui.gd" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://dhr8fw4f47wlh" path="res://icon.svg" id="1_jjvhh"]
+[ext_resource type="Script" uid="uid://dr7gl1qbuvjov" path="res://Scenes/main.gd" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://b74832fe531kq" path="res://Scenes/character_slot.tscn" id="2_21xkr"]
+[ext_resource type="Script" uid="uid://c5y016s5gv0mo" path="res://Scenes/options_menu.gd" id="2_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://bp2ifanmiwbry" path="res://assets/ahorcado.png" id="3_6bp64"]
+[ext_resource type="Texture2D" uid="uid://ci4cluyku5ym" path="res://assets/timer_F.png" id="4_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://bglfb8vpl6mfn" path="res://assets/timer_P.png" id="5_hptm8"]
+[ext_resource type="Script" uid="uid://br7u25ps0njrw" path="res://Scenes/timer.gd" id="6_hptm8"]
+
+[sub_resource type="Animation" id="Animation_jjgbg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameUI/FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameUI/FadeRect:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("GameUI/BlockRect:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CharacterSprites:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(870, 275)]
+}
+
+[sub_resource type="Animation" id="Animation_21xkr"]
+resource_name = "block"
+length = 0.2666700139079243
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameUI/BlockRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666665),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_7u77a"]
+resource_name = "fade_in"
+length = 0.66667003476955
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameUI/FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.16666667, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameUI/FadeRect:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_bo1nx"]
+resource_name = "fade_out"
+length = 0.66667003476955
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameUI/FadeRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameUI/FadeRect:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6iyac"]
+resource_name = "wrong_shake"
+length = 0.3000033489797264
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprites:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.2, 0.23333335, 0.26666668, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(870, 275), Vector2(875, 280), Vector2(865, 270), Vector2(865, 280), Vector2(875, 270), Vector2(875, 280), Vector2(865, 270), Vector2(865, 280), Vector2(875, 270), Vector2(870, 275)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameUI/BlockRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jjgbg"]
+_data = {
+&"RESET": SubResource("Animation_jjgbg"),
+&"block": SubResource("Animation_21xkr"),
+&"fade_in": SubResource("Animation_7u77a"),
+&"fade_out": SubResource("Animation_bo1nx"),
+&"wrong_shake": SubResource("Animation_6iyac")
+}
+
+[sub_resource type="Animation" id="Animation_ynf5e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameUI/PlayerUI/MarginContainer/TimerBar:offset_transform_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameUI/PlayerUI/MarginContainer/TimerBar:offset_transform_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hptm8"]
+resource_name = "active"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameUI/PlayerUI/MarginContainer/TimerBar:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.85, 0.85), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d1ilt"]
+resource_name = "time_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameUI/PlayerUI/MarginContainer/TimerBar:offset_transform_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GameUI/PlayerUI/MarginContainer/TimerBar:offset_transform_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.2, 0.23333335, 0.26666668, 0.3, 0.33333334, 0.36666667, 0.4, 0.43333337, 0.4666667, 0.5, 0.53333336, 0.5666667, 0.6000001, 0.6333334, 0.66666675, 0.70000005, 0.7333334, 0.7666667, 0.8000001, 0.8333334, 0.86666673, 0.90000004, 0.9333334, 0.9666667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d1ilt"]
+_data = {
+&"RESET": SubResource("Animation_ynf5e"),
+&"active": SubResource("Animation_hptm8"),
+&"time_out": SubResource("Animation_d1ilt")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s18xy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gbba"]
+bg_color = Color(0, 0, 0, 0.24705882)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 0.24705882)
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqvom"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7u77a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ie0r4"]
+
+[node name="Main" type="Node2D" unique_id=276561622 node_paths=PackedStringArray("level_label", "question_space")]
+script = ExtResource("1_kry3j")
+character_slot = ExtResource("2_21xkr")
+level_label = NodePath("GameUI/PlayerUI/MarginContainer/Label")
+question_space = NodePath("GameUI/PlayerUI/MarginContainer/QuestionSpace/Label")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1520104655]
+scroll_offset = Vector2(45, 118)
+
+[node name="CharacterSprites" type="Sprite2D" parent="." unique_id=1494739662]
+position = Vector2(870, 275)
+scale = Vector2(2.84375, 2.421875)
+texture = ExtResource("3_6bp64")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1753162735]
+libraries/ = SubResource("AnimationLibrary_jjgbg")
+autoplay = &"fade_in"
+
+[node name="GameUI" type="CanvasLayer" parent="." unique_id=1288714475]
+
+[node name="PlayerUI" type="Control" parent="GameUI" unique_id=311400392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GameUI/PlayerUI" unique_id=668180972]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="GameUI/PlayerUI/MarginContainer" unique_id=2123945513]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Nivel 0"
+
+[node name="TimerBar" type="TextureProgressBar" parent="GameUI/PlayerUI/MarginContainer" unique_id=8570753]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+offset_transform_enabled = true
+offset_transform_pivot_ratio = Vector2(0.5, 0.54)
+value = 100.0
+fill_mode = 5
+texture_over = ExtResource("4_ynf5e")
+texture_progress = ExtResource("5_hptm8")
+script = ExtResource("6_hptm8")
+
+[node name="TimerAnimationPlayer" type="AnimationPlayer" parent="GameUI/PlayerUI/MarginContainer/TimerBar" unique_id=188198840]
+root_node = NodePath("../../../../..")
+libraries/ = SubResource("AnimationLibrary_d1ilt")
+
+[node name="QuestionSpace" type="MarginContainer" parent="GameUI/PlayerUI/MarginContainer" unique_id=2073349292]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 0
+
+[node name="CharacterFrame" type="PanelContainer" parent="GameUI/PlayerUI/MarginContainer/QuestionSpace" unique_id=1042356108]
+custom_minimum_size = Vector2(364, 310)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_s18xy")
+
+[node name="TextureRect" type="TextureRect" parent="GameUI/PlayerUI/MarginContainer/QuestionSpace/CharacterFrame" unique_id=253857921]
+visible = false
+layout_mode = 2
+texture = ExtResource("1_jjvhh")
+
+[node name="Label" type="Label" parent="GameUI/PlayerUI/MarginContainer/QuestionSpace" unique_id=1761453383]
+custom_minimum_size = Vector2(564, 200)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_8gbba")
+text = "Aqui va el texto de la pregunta o el parrafo con una palabra faltante "
+autowrap_mode = 2
+
+[node name="AnswerPreview" type="MarginContainer" parent="GameUI/PlayerUI/MarginContainer" unique_id=33059154]
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 324
+theme_override_constants/margin_right = 460
+theme_override_constants/margin_bottom = 206
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameUI/PlayerUI/MarginContainer/AnswerPreview" unique_id=289529396]
+layout_mode = 2
+
+[node name="LetterOptions" type="VBoxContainer" parent="GameUI/PlayerUI/MarginContainer" unique_id=1742118081]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="GuessBox" type="HBoxContainer" parent="GameUI/PlayerUI/MarginContainer/LetterOptions" unique_id=1214085308]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="GuessInput" type="LineEdit" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/GuessBox" unique_id=1537070011]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GuessButton" type="Button" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/GuessBox" unique_id=1898461713]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Adivinar"
+
+[node name="HSeparator" type="HSeparator" parent="GameUI/PlayerUI/MarginContainer/LetterOptions" unique_id=907437752]
+layout_mode = 2
+theme_override_constants/separation = 8
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uqvom")
+
+[node name="LetterButtons" type="HBoxContainer" parent="GameUI/PlayerUI/MarginContainer/LetterOptions" unique_id=1994356447]
+layout_mode = 2
+alignment = 1
+
+[node name="CharacterButton" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=2064984489 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "A"
+
+[node name="CharacterButton2" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=99234989 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "B"
+
+[node name="CharacterButton3" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=300613142 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "C"
+
+[node name="CharacterButton4" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=816183749 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "D"
+
+[node name="CharacterButton5" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=658355118 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "E"
+
+[node name="CharacterButton6" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=1281556414 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "F"
+
+[node name="CharacterButton7" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=880602217 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "G"
+
+[node name="CharacterButton8" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=720000936 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "H"
+
+[node name="CharacterButton9" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=510900542 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "I"
+
+[node name="CharacterButton10" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=930963840 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "J"
+
+[node name="CharacterButton11" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=23647310 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "K"
+
+[node name="CharacterButton12" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=1939179882 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "L"
+
+[node name="CharacterButton13" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=1481421756 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "M"
+
+[node name="CharacterButton14" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons" unique_id=1886953578 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "N"
+
+[node name="LetterButtons2" type="HBoxContainer" parent="GameUI/PlayerUI/MarginContainer/LetterOptions" unique_id=10304880]
+layout_mode = 2
+alignment = 1
+
+[node name="CharacterButton" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=428468756 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "Ñ"
+
+[node name="CharacterButton2" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=2119143174 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "O"
+
+[node name="CharacterButton3" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=854705469 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "P"
+
+[node name="CharacterButton4" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=1572808209 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "Q"
+
+[node name="CharacterButton5" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=493900780 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "R"
+
+[node name="CharacterButton6" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=1969774635 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "S"
+
+[node name="CharacterButton7" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=1440057480 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "T"
+
+[node name="CharacterButton8" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=2127631208 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "U"
+
+[node name="CharacterButton9" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=290911802 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "V"
+
+[node name="CharacterButton10" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=866490165 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "W"
+
+[node name="CharacterButton11" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=1628314652 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "X"
+
+[node name="CharacterButton12" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=211814969 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "Y"
+
+[node name="CharacterButton13" parent="GameUI/PlayerUI/MarginContainer/LetterOptions/LetterButtons2" unique_id=1333181066 instance=ExtResource("1_8gbba")]
+layout_mode = 2
+letter = "Z"
+
+[node name="PauseUI" type="Control" parent="GameUI" unique_id=1942564820]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jjgbg")
+
+[node name="MarginContainer" type="MarginContainer" parent="GameUI/PauseUI" unique_id=1626798872]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PauseButton" type="Button" parent="GameUI/PauseUI/MarginContainer" unique_id=1624719136]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "||"
+
+[node name="PanelPause" type="PanelContainer" parent="GameUI/PauseUI" unique_id=779602823]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseMenu" type="MarginContainer" parent="GameUI/PauseUI/PanelPause" unique_id=225898072]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="GameUI/PauseUI/PanelPause/PauseMenu" unique_id=1853075825]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Pausa"
+
+[node name="PauseOptions" type="VBoxContainer" parent="GameUI/PauseUI/PanelPause/PauseMenu" unique_id=1577761155]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ButtonContinue" type="Button" parent="GameUI/PauseUI/PanelPause/PauseMenu/PauseOptions" unique_id=401530859]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Continuar"
+
+[node name="ButtonOptions" type="Button" parent="GameUI/PauseUI/PanelPause/PauseMenu/PauseOptions" unique_id=1104805111]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Opciones"
+
+[node name="ButtonExit" type="Button" parent="GameUI/PauseUI/PanelPause/PauseMenu/PauseOptions" unique_id=297593891]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Salir"
+
+[node name="OptionsMenu" type="MarginContainer" parent="GameUI/PauseUI/PanelPause" unique_id=1560867866 node_paths=PackedStringArray("master_slider", "master_percent", "music_slider", "music_percent", "effects_slider", "effects_percent")]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 20
+script = ExtResource("2_bo1nx")
+master_slider = NodePath("VBoxContainer/HBoxContainer3/SliderMaster")
+master_percent = NodePath("VBoxContainer/HBoxContainer3/LabelMasterPercent")
+music_slider = NodePath("VBoxContainer/HBoxContainer/SliderMusic")
+music_percent = NodePath("VBoxContainer/HBoxContainer/LabelMusicPercent")
+effects_slider = NodePath("VBoxContainer/HBoxContainer2/SliderEffects")
+effects_percent = NodePath("VBoxContainer/HBoxContainer2/LabelEffectsPercent")
+
+[node name="LabelDificulty" type="Label" parent="GameUI/PauseUI/PanelPause/OptionsMenu" unique_id=394765920]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Opciones"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/PauseUI/PanelPause/OptionsMenu" unique_id=611276376]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LabelMaster" type="Label" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer" unique_id=20232391]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Master"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer" unique_id=2027268153]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SliderMaster" type="HSlider" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer/HBoxContainer3" unique_id=1550560436]
+custom_maximum_size = Vector2(929, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="LabelMasterPercent" type="Label" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer/HBoxContainer3" unique_id=794650597]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 18
+text = "0%"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer" unique_id=53976338]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7u77a")
+
+[node name="LabelMusic" type="Label" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer" unique_id=390687755]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Musica"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer" unique_id=1739723843]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SliderMusic" type="HSlider" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer/HBoxContainer" unique_id=1216601989]
+custom_maximum_size = Vector2(929, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="LabelMusicPercent" type="Label" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer/HBoxContainer" unique_id=1386590512]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "0%"
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer" unique_id=580384994]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7u77a")
+
+[node name="LabelEffects" type="Label" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer" unique_id=1647243992]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Efectos"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer" unique_id=38887724]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SliderEffects" type="HSlider" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=692286712]
+custom_maximum_size = Vector2(929, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="LabelEffectsPercent" type="Label" parent="GameUI/PauseUI/PanelPause/OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=791991398]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "0%"
+vertical_alignment = 1
+
+[node name="ButtonBack" type="Button" parent="GameUI/PauseUI/PanelPause/OptionsMenu" unique_id=1209405702]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Atras"
+
+[node name="GameEndScreen" type="PanelContainer" parent="GameUI" unique_id=1263474341]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameUI/GameEndScreen" unique_id=860336519]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -150)
+theme_override_font_sizes/font_size = 64
+text = "Fin de la partida."
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/GameEndScreen" unique_id=832009612]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_position = Vector2(0, 50)
+alignment = 1
+
+[node name="ButtonRestart" type="Button" parent="GameUI/GameEndScreen/VBoxContainer" unique_id=571526306]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 18
+text = "Reiniciar"
+
+[node name="ButtonExit" type="Button" parent="GameUI/GameEndScreen/VBoxContainer" unique_id=939371770]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Salir"
+
+[node name="ContinuePanel" type="PanelContainer" parent="GameUI" unique_id=1772520899]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ie0r4")
+
+[node name="PanelContainer" type="PanelContainer" parent="GameUI/ContinuePanel" unique_id=1756322823]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="GameUI/ContinuePanel/PanelContainer" unique_id=510310986]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="Label" type="Label" parent="GameUI/ContinuePanel/PanelContainer/MarginContainer" unique_id=646311129]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Nivel completado!"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/ContinuePanel/PanelContainer/MarginContainer" unique_id=1851401996]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="ContinueButton" type="Button" parent="GameUI/ContinuePanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=154499952]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Continuar"
+
+[node name="ExitButton" type="Button" parent="GameUI/ContinuePanel/PanelContainer/MarginContainer/VBoxContainer" unique_id=850064353]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Salir"
+
+[node name="FadeRect" type="ColorRect" parent="GameUI" unique_id=817492906]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="BlockRect" type="ColorRect" parent="GameUI" unique_id=160623152]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=110848659]
+bus = &"Music"
+
+[node name="EffectsStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1763499399]
+
+[connection signal="pressed" from="GameUI/PlayerUI/MarginContainer/LetterOptions/GuessBox/GuessButton" to="." method="_on_guess_button_pressed"]
+[connection signal="pressed" from="GameUI/PauseUI/MarginContainer/PauseButton" to="GameUI/PauseUI" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="GameUI/PauseUI/PanelPause/PauseMenu/PauseOptions/ButtonContinue" to="GameUI/PauseUI" method="_on_button_continue_pressed"]
+[connection signal="pressed" from="GameUI/PauseUI/PanelPause/PauseMenu/PauseOptions/ButtonOptions" to="GameUI/PauseUI" method="_on_button_options_pressed"]
+[connection signal="pressed" from="GameUI/PauseUI/PanelPause/PauseMenu/PauseOptions/ButtonExit" to="GameUI/PauseUI" method="_on_button_exit_pressed"]
+[connection signal="pressed" from="GameUI/PauseUI/PanelPause/OptionsMenu/ButtonBack" to="GameUI/PauseUI" method="_on_button_back_pressed"]
+[connection signal="pressed" from="GameUI/GameEndScreen/VBoxContainer/ButtonRestart" to="." method="_on_button_restart_pressed"]
+[connection signal="pressed" from="GameUI/GameEndScreen/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="GameUI/ContinuePanel/PanelContainer/MarginContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]

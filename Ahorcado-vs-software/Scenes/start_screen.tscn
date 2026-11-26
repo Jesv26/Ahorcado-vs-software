@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://bxvd8waev35"]
+
+[ext_resource type="Script" uid="uid://dnxyrghy603b5" path="res://Scenes/start_screen.gd" id="1_i8r30"]
+[ext_resource type="Script" uid="uid://c5y016s5gv0mo" path="res://Scenes/options_menu.gd" id="2_ainjc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s18xy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a12m4"]
+
+[sub_resource type="Animation" id="Animation_ainjc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_i8r30"]
+resource_name = "screen_fade"
+length = 0.66667003476955
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:mouse_filter")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ainjc"]
+_data = {
+&"RESET": SubResource("Animation_ainjc"),
+&"screen_fade": SubResource("Animation_i8r30")
+}
+
+[node name="StartScreen" type="Control" unique_id=271453464]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8r30")
+
+[node name="MainSelect" type="VBoxContainer" parent="." unique_id=473109598]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -64.0
+offset_right = 74.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameName" type="Label" parent="MainSelect" unique_id=839420386]
+layout_mode = 2
+offset_transform_position = Vector2(0, -50)
+theme_override_font_sizes/font_size = 64
+text = "Juego del ahorcado"
+
+[node name="HSeparator" type="HSeparator" parent="MainSelect" unique_id=1948791970]
+layout_mode = 2
+theme_override_constants/separation = 64
+theme_override_styles/separator = SubResource("StyleBoxEmpty_s18xy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainSelect" unique_id=80651208]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ButtonPlay" type="Button" parent="MainSelect/VBoxContainer" unique_id=1974473737]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Jugar"
+
+[node name="ButtonOptions" type="Button" parent="MainSelect/VBoxContainer" unique_id=777101160]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Opciones"
+
+[node name="ButtonExit" type="Button" parent="MainSelect/VBoxContainer" unique_id=2108965673]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Salir"
+
+[node name="OptionsMenu" type="MarginContainer" parent="." unique_id=1336037365 node_paths=PackedStringArray("master_slider", "master_percent", "music_slider", "music_percent", "effects_slider", "effects_percent")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 20
+script = ExtResource("2_ainjc")
+master_slider = NodePath("VBoxContainer/HBoxContainer3/SliderMaster")
+master_percent = NodePath("VBoxContainer/HBoxContainer3/LabelMasterPercent")
+music_slider = NodePath("VBoxContainer/HBoxContainer/SliderMusic")
+music_percent = NodePath("VBoxContainer/HBoxContainer/LabelMusicPercent")
+effects_slider = NodePath("VBoxContainer/HBoxContainer2/SliderEffects")
+effects_percent = NodePath("VBoxContainer/HBoxContainer2/LabelEffectsPercent")
+
+[node name="LabelOptions" type="Label" parent="OptionsMenu" unique_id=1247112272]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Opciones"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu" unique_id=1903273741]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="LabelMaster" type="Label" parent="OptionsMenu/VBoxContainer" unique_id=2013236443]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Master"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="OptionsMenu/VBoxContainer" unique_id=167677891]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SliderMaster" type="HSlider" parent="OptionsMenu/VBoxContainer/HBoxContainer3" unique_id=1729489228]
+custom_maximum_size = Vector2(929, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="LabelMasterPercent" type="Label" parent="OptionsMenu/VBoxContainer/HBoxContainer3" unique_id=18282023]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 18
+text = "0%"
+horizontal_alignment = 2
+
+[node name="HSeparator" type="HSeparator" parent="OptionsMenu/VBoxContainer" unique_id=1132786179]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a12m4")
+
+[node name="LabelMusic" type="Label" parent="OptionsMenu/VBoxContainer" unique_id=1126703869]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Musica"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/VBoxContainer" unique_id=1701503228]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SliderMusic" type="HSlider" parent="OptionsMenu/VBoxContainer/HBoxContainer" unique_id=395359464]
+custom_maximum_size = Vector2(929, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="LabelMusicPercent" type="Label" parent="OptionsMenu/VBoxContainer/HBoxContainer" unique_id=1122847340]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 18
+text = "0%"
+horizontal_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="OptionsMenu/VBoxContainer" unique_id=1948195680]
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_a12m4")
+
+[node name="LabelEffects" type="Label" parent="OptionsMenu/VBoxContainer" unique_id=1798745773]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Efectos de sonido"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="OptionsMenu/VBoxContainer" unique_id=524618886]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SliderEffects" type="HSlider" parent="OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=897117932]
+custom_maximum_size = Vector2(929, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="LabelEffectsPercent" type="Label" parent="OptionsMenu/VBoxContainer/HBoxContainer2" unique_id=466283995]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 18
+text = "0%"
+horizontal_alignment = 2
+
+[node name="ButtonBack" type="Button" parent="OptionsMenu" unique_id=1077302752]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Atras"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=495112201]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1953303767]
+libraries/ = SubResource("AnimationLibrary_ainjc")
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=178251138]
+bus = &"Music"
+
+[node name="EffectsStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1382415882]
+
+[connection signal="pressed" from="MainSelect/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="MainSelect/VBoxContainer/ButtonOptions" to="." method="_on_button_options_pressed"]
+[connection signal="pressed" from="MainSelect/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="OptionsMenu/ButtonBack" to="." method="_on_button_back_pressed"]

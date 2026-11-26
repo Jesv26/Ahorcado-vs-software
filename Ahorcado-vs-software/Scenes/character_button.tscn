@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://by7i7ub756n0x"]
+
+[ext_resource type="Script" uid="uid://bqe85l5dqx7hb" path="res://Scenes/character_button.gd" id="1_3a0vx"]
+
+[node name="CharacterButton" type="Button" unique_id=2064984489]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 32
+script = ExtResource("1_3a0vx")

@@ -1,0 +1,57 @@
+[
+    {
+        "id": 12,
+        "pregunta": "Documento formal que describe detalladamente lo que el sistema debe hacer.",
+        "respuesta": "ESPECIFICACION"
+    },
+    {
+        "id": 13,
+        "pregunta": "Diagrama que muestra la interacción entre un actor y el sistema para lograr un objetivo.",
+        "respuesta": "CASOS DE USO"
+    },
+    {
+        "id": 14,
+        "pregunta": "Requisito que define cómo debe ser el sistema en aspectos como rendimiento, seguridad y usabilidad.",
+        "respuesta": "NO FUNCIONAL"
+    },
+    {
+        "id": 15,
+        "pregunta": "Requisito que describe una acción o tarea específica que el software debe ejecutar.",
+        "respuesta": "FUNCIONAL"
+    },
+    {
+        "id": 16,
+        "pregunta": "Persona o sistema externo que interactúa directamente con el software.",
+        "respuesta": "ACTOR"
+    },
+    {
+        "id": 17,
+        "pregunta": "Proceso de revisar que los requisitos definidos realmente correspondan a lo que el cliente desea.",
+        "respuesta": "VALIDACION"
+    },
+    {
+        "id": 18,
+        "pregunta": "Modelo que define los límites del sistema y su entorno operativo.",
+        "respuesta": "CONTEXTO"
+    },
+    {
+        "id": 19,
+        "pregunta": "Representación visual de cómo se mueven y transforman los datos dentro del sistema.",
+        "respuesta": "FLUJO DE DATOS"
+    },
+    {
+        "id": 20,
+        "pregunta": "Descripción corta y simple de una funcionalidad contada desde la perspectiva del usuario.",
+        "respuesta": "HISTORIA DE USUARIO"
+    },
+    {
+        "id": 21,
+        "pregunta": "Cualquier persona, grupo u organización que tiene interés o se ve afectado por el proyecto.",
+        "respuesta": "STAKEHOLDER"
+    },
+    {
+        "id": 22,
+        "pregunta": "Actividad de controlar y documentar los cambios que sufren los requisitos durante el proyecto.",
+        "respuesta": "ADMINISTRACION"
+    }
+]
